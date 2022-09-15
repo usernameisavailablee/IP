@@ -20,9 +20,9 @@ string shift_left(string message)
 int main()
 {
 	string now;
-	string path = "C:\\Users\\Трактирщик\\source\\repos\\IP\\first\\input.txt";
+	string path = "C:\\Users\\Трактирщик\\source\\repos\\IP\\first";
 	ifstream input;
-	input.open(path);
+	input.open(path+"\\input.txt");
 
 	list <string> File_List;
 	while (!input.eof())
@@ -79,8 +79,9 @@ int main()
 			now_max = counter;
 		}
 	}
-	for (list<string>::iterator str = decode_messages.begin(); str != decode_messages.end(); ++str)
-		cout << *str << " ";
+	
 
-
+	ofstream output(path + "\\output_cod.txt");
+		for (list<string>::iterator str = decode_messages.begin(); str != decode_messages.end(); ++str)
+			output << *str << " ";
 }	
